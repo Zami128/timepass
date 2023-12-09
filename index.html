@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Stylish Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #000000, #C0C0C0); /* Gradient from black to silver */
+            color: #fff; /* White text for better visibility */
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #333333, #C0C0C0); /* Gradient for header */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            background: linear-gradient(135deg, #333333, #C0C0C0); /* Same gradient as header */
+            padding: 10px;
+            text-align: center; /* Center-align the text within the nav */
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        section {
+            padding: 0px;
+        }
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: Adds rounded corners to the image */
+            margin-bottom: 20px;
+        }
+        footer {
+            background: linear-gradient(135deg, #333333, #C0C0C0); /* Same gradient as header */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: bottom;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            nav {
+                text-align: center;
+            }
+            nav a {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Zamiur Rahman</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Hello! I am Zamiur Rahman, a passionate web developer. 
+            Here, you can learn more about me and my interests.
+        </p>
+    </section>
+
+    <section>
+        <h2>My Portfolio</h2>
+        <p>Check out some of my amazing work!</p>
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLW_EtCjtcCU4OhtoiKhLFDglGJz9Q2y680ltRFU9qyf8U=s288-c-no" alt="zamiur" alt="Zamiur Rahman">
+        <!-- Replace "your-image.jpg" with the actual file path or URL of your image -->
+    </section>
+
+    <section>
+        <h2>Multiple Choice Question</h2>
+        <p>Who is gay?</p>
+        <form id="quizForm">
+            <label>
+                <input type="radio" name="answer" value="Hasin Anjum Dhrubo"> Hasin Anjum Dhrubo
+            </label> <br>
+            <label>
+                <input type="radio" name="answer" value="Maqsud Zyan"> Maqsud Zyan
+            </label><br>
+            <label>
+                <input type="radio" name="answer" value="Nadrun Basher Rafid">Nadrun Basher Rafid
+            </label><br>
+            <label>
+                <input type="radio" name="answer" value="Ahnaf Arnob"> Ahnaf Arnob
+            </label>
+            <br>
+            <button type="button" onclick="checkAnswer()">Submit</button>
+        </form>
+        <p id="result"></p>
+        <p id="correctAnswer" style="display: none;">The correct answer is Hasin Anjum Dhrubo.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedAnswer) {
+                var resultElement = document.getElementById("result");
+                var correctAnswerElement = document.getElementById("correctAnswer");
+
+                if (selectedAnswer.value === "Hasin Anjum Dhrubo") {
+                    resultElement.textContent = "Correct! Well done.";
+                } else {
+                    resultElement.textContent = "Incorrect. Try again.";
+                }
+
+                correctAnswerElement.style.display = "block";
+            } else {
+                alert("Please select an answer before submitting.");
+            }
+        }
+    </script>
+
+</body>
+</html>
