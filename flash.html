@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(244, 194, 86);
+
+}
+.container{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    background-color: rgb(216, 100, 57);
+    border-radius: 50%;
+} 
+.container span{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    animation: sman 2.5s linear infinite;
+    animation-delay: calc(-0.5s * var(--i));
+    background-color: rgb(216, 100, 57);
+
+}
+@keyframes sman{
+    0%{
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    90%{
+        transform: scale(3);
+    }
+    100%{
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.image-container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.image-container img{
+    width: 500px;
+    height: 500px;
+   animation: sm 0.1s  infinite;
+}
+
+@keyframes sm{
+    0%,100%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+}
+</style>
+<body>
+
+    <div class="container">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+        <span style="--i:4"></span>
+        <span style="--i:5"></span>
+        <span style="--i:6"></span>
+        <span style="--i:7"></span>
+        <span style="--i:8"></span>
+        <span style="--i:9"></span>
+        <span style="--i:10"></span>
+    </div>
+
+    <div class="image-container">
+        <img src="https://purepng.com/public/uploads/large/flash-man-ima.png" alt="">
+    </div>
+    
+</body>
+</html>
